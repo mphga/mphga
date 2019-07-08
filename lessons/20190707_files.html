@@ -55,12 +55,27 @@
 		<ol>
 		<li>with open('filename', 'r') as myfile:<br />&nbsp;&nbsp; myfile.readline()</li>
 		<li>Why do you care: b/c it takes care of the flush/close clean up for you</li>
-		<li>this is a general feature of Python and applies to more than just open() (degtails are not important - point is that it's not just for openening files)</li>
+		<li>this is a general feature of Python and applies to more than just open() (degtails are not important - point is that it's not just for openning files)</li>
 		</ol>
 		</li>
 		</ol>
 		</li>
-		<li>String Functions
+		<li>Scope &amp; the LEGB resolution rule
+			<ol>
+			<li>most things in a python program have a name - e.g. a variable, function, method</li>
+			<li>when a script refrences a name, python has to figure out what it "points to"</li>
+			<li>Important b/c there can be name collissions - e.g. the same name can be used to point to differnt things in different places in a program</li>
+			<li>When python <em>resolves</em> a name to the thing it points to it looks in specific places in a specific order - given by the mnemonic LEGB -- Local, Enclosing, Global, Built-in
+			<ol>
+			<li>Local means inside the "closest" function or object (latter to be discussed at some point in the future)</li>
+			<li>Enclosing means inside any function or object enclosing the closest one</li>
+			<li>Global means in the module</li>
+			<li>Built-in means looking into python itself (technically the run-time)</li>
+			</ol>
+			</li>
+			<li>This idea should become more concrete when we discuss functions</li>
+			</ol>
+			</li><li>String Functions
 		<ol>
 		<li>split, join</li>
 		</ol>
