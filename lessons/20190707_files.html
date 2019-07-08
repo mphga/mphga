@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body style='font-family: sans-serif;'>
+		<h1>2019-07-07 Working with files</h1>
+		<h2>Programming</h2>
+		<ol>
+		<li>debuging techniques
+		<ol>
+		<li>reminder - use print statements to print the values of variables or expressions</li>
+		<li>throw away input() to pause the program</li>
+		</ol>
+		</li>
+		<li>Assume user input is "dirty" and potentially malicious
+		<ol>
+		<li>Generally you should always sanitize/check user input</li>
+		<li>WE're not doing that much yet :(</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>Python</h2>
+		<ol>
+		<li>Files
+		<ol>
+		<li>open(&lt;fname&gt;, &lt;mode_string&gt;)
+		<ol>
+		<li>&lt;fname&gt; file name - as string</li>
+		<li>&lt;mode_string&gt; is one of 'r' for read, 'w' for write, etc.</li>
+		<li>REMEMBER: w will truncate the file, also will create if it doesn't exit</li>
+		<li>REMEMBER 'r' requires the file to exist</li>
+		<li>typcially use like: 'f = open('filename','r')</li>
+		</ol>
+		</li>
+		<li>file methods
+		<ol>
+		<li>read(), readline(), write(), flush(), close()</li>
+		<li>remember: you call on the file object, e.g. assume you opened a file and assigned it to the variable 'f', then, f.write('string to write'), etc.</li>
+		<li>Assign the result of read functions to a variable to do something with the return values, e.g. data = f.readline()</li>
+		<li>read() is the ENTIRE FILE - could be a problem if the file is huge</li>
+		<li>write() writes exactly what you give it, if you intend what you write to be broken into lines, be sure the newline characters are where you expect them</li>
+		<li>flush() ensures the data is written to the file - SORTA
+		<ol>
+		<li>The OS can still hang onto it a while before actually writting to disk</li>
+		</ol>
+		</li>
+		<li>close() - does what it says
+		<ol>
+		<li>if you want to flush, must do so before close</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Context manager - 'with'
+		<ol>
+		<li>with open('filename', 'r') as myfile:<br />&nbsp;&nbsp; myfile.readline()</li>
+		<li>Why do you care: b/c it takes care of the flush/close clean up for you</li>
+		<li>this is a general feature of Python and applies to more than just open() (degtails are not important - point is that it's not just for openening files)</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>String Functions
+		<ol>
+		<li>split, join</li>
+		</ol>
+		</li>
+		<li>Reminders
+		<ol>
+		<li>best practice- don't use capital letters in variable names (there will be exceptions later)</li>
+		</ol>
+		</li>
+		<li>Exception handling
+		<ol>
+		<li>try/except
+		<ol>
+		<li>If the code intry fails - do the stuff in except clause</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>Git/Github</h2>
+		<ol>
+		<li>remember the workflow
+		<ol>
+		<li>pull, change code, commit, push</li>
+		</ol>
+		</li>
+		<li>reminder - you'll likely need to start the python virtual environment before you start working
+		<ol>
+		<li>order of pull &amp; start venv isn't important</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>OS</h2>
+		<ol>
+		<li>Environment variables
+		<ol>
+		<li>store configuration data used by the OS and/or programs</li>
+		<li>PATH - directories in which to look for programms (which might seem like "commands")</li>
+		</ol>
+		</li>
+		<li>order OS searches for commands/programs
+		<ol>
+		<li>built in</li>
+		<li>current directory*</li>
+		<li>path - in order, left to right<br /><br />* this isn't the case w/linux - it will only do this if you explicitly tell it to, using the '.' (single dot)<br /><br />error if program isn't found in 1-3</li>
+		</ol>
+		</li>
+		</ol>
+	</body>
+</html>
