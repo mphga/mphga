@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+	</head>
+	<body>
+		<h1>2019-07-14</h1>
+		<h2>Programming</h2>
+		<ol>
+		<li>nothing - I'm sure there was something - but I don't recall - do you?</li>
+		</ol>
+		<h2>Python</h2>
+		<ol>
+		<li>Files<br />
+		<ol>
+		<li><span style="text-decoration: line-through;">readlines vs readline</span> &lt;&lt; we didn't get to this</li>
+		</ol>
+		</li>
+		<li>More types
+		<ol>
+		<li>List
+		<ol>
+		<li>[1,2,3,'string']</li>
+		</ol>
+		</li>
+		<li>Dictionary
+		<ol>
+		<li>aka hash, map</li>
+		<li>{'player': 'frank', 'maxhp': 100}</li>
+		</ol>
+		</li>
+		<li>Nesting
+		<ol>
+		<li>Lists and Dictionaries can contain list and dictionaries as values, in any number of levels</li>
+		</ol>
+		</li>
+		<li>Mutable vs Immutable
+		<ol>
+		<li>what the names imply</li>
+		<li>more importantly, you can use mutable types to hold information that changes so various bits of your programs can "see" the changes</li>
+		<li>Dict is mutable, integer is immutable</li>
+		<li>recall the example of changing each inside a function (the scope rules apply here)</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Functions
+		<ol>
+		<li>def &lt;funcname&gt;([params...]):<br />&nbsp;&nbsp; &lt;func code here&gt;, e.g.
+		<ol>
+		<li>def combat_loop(pcdata):<br />&nbsp;&nbsp; #your code here</li>
+		<li>function may take parameters (<em>pcdata </em>in the example above)</li>
+		<li>you give the params any name you like - they become variables you can use in the function</li>
+		<li>Variables you create in a function are only known to the function - if they overalp w/a global name the local name is used</li>
+		</ol>
+		</li>
+		<li>return
+		<ol>
+		<li>This is a value you "give back to the caller"</li>
+		<li>can be more than one - but only one should ever be called</li>
+		<li>not all functions have to return a value (technically they all do, if you don't specify a return value - the function returns None)</li>
+		</ol>
+		</li>
+		<li>To call the function...<br />myfunc(var1, var2)</li>
+		</ol>
+		</li>
+		<li>Modules/Packages
+		<ol>
+		<li>import statement
+		<ol>
+		<li>import &lt;modulename&gt;<br />import yaml</li>
+		<li>To use the imported code, you use prefix it with the module name, e.g.
+		<ol>
+		<li>yaml.load()&nbsp; # using the example import above</li>
+		</ol>
+		</li>
+		<li>you can also rename the import, like so
+		<ol>
+		<li>import long_module_name as lmn<br />lmn.function()</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Secific modules
+		<ol>
+		<li>PyYAML<br />
+		<ol>
+		<li>load(yaml_thing), dump(data, yaml_thing)
+		<ol>
+		<li>yaml_thing is either yaml in a string or - more commonly - yaml in a file</li>
+		<li>data is some data you want to convert to yaml - commonly this is a dictionary</li>
+		</ol>
+		</li>
+		<li>Open file first if you're reading/writing (load/dump) from/to a file</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>PyPI ("PIE-PEE-EYE")
+		<ol>
+		<li>This is the website from which you can install packages - e.g. the PyYAML pagkage</li>
+		<li>You, as human, can browse it to learn more about a given package - can also search</li>
+		<li>as you progress you'll learn about more packages</li>
+		</ol>
+		</li>
+		<li>pip install
+		<ol>
+		<li>this is how you install a package from PyPI</li>
+		<li>best to follow this method - from inside your virtual environment...<br />python -m pip install &lt;modulename&gt;</li>
+		<li>Be sure to get the module name right, unfortunately the security of PyPI is weak, and others could upload malicious packages using the same, name as another, benign package</li>
+		<li>pip freeze to see what packages are installed and the assocaited version</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Interactive Interpreter
+		<ol>
+		<li>you can just run pythong itself from the command line</li>
+		<li>this can be handy when you have a small test you want to run and see results immediately
+		<ol>
+		<li>it's a lot less useful when your tests are of any lenght or complexity - in that case, just write files</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>Git/Github</h2>
+		<ol>
+		<li>git diff &lt;f1&gt; &lt;f2&gt;<br />
+		<ol>
+		<li>Show what changed in f1 to make it look like f2</li>
+		<li>you can compre current changes to last commit, or versions from specific commits</li>
+		</ol>
+		</li>
+		<li>refernces (git)
+		<ol>
+		<li>HEAD
+		<ol>
+		<li>^ means one before, e.g. HEAD^^ means two commits before current</li>
+		</ol>
+		</li>
+		<li>the names of branches are also references - e.g. pointers to a certain commit</li>
+		<li>commits have a long name which is a big number (hex)</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>OS</h2>
+		<ol>
+		<li>shebang<br />
+		<ol>
+		<li>first line is:<br />#!/usr/bin/env python</li>
+		<li>this will allow your script to be run by the file name alone in linux (windows "just does this)</li>
+		<li>You'll also have to make the file executable
+		<ol>
+		<li>Try <a href="https://askubuntu.com/questions/229589/how-to-make-a-file-e-g-a-sh-script-executable-so-it-can-be-run-from-termina">this article</a> to find out how</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		<p>&nbsp;</p>
+		<p>vitutorial</p>
+		</ol>
+	</body>
+</html>
