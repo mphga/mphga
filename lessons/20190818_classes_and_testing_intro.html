@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+	</head>
+	<body>
+		<h1>2019-08-18 Intro to: git branching, python classes/oop and the unittest package</h1>
+		<h2>Programming</h2>
+		<ol>
+		<li>testing
+		<ol>
+		<li>Unit vs functional</li>
+		<li>Test Driven Development/Programming</li>
+		<li>Why
+		<ol>
+		<li>consistency</li>
+		<li>kill bugs</li>
+		<li>Remove drudgery</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>Python</h2>
+		<ol>
+		<li>Classes<br /><br />
+		<ol>
+		<li>General
+		<ol>
+		<li>from object oriented programming</li>
+		<li>a way to organize data and functions that act on that data
+		<ol>
+		<li>analogous to modules (python files) - which contain variables and functions that use/act on them</li>
+		<li>you access data/functions via the class or instance name</li>
+		</ol>
+		</li>
+		<li>Methods - functions defined w/in a class</li>
+		<li>Property - variable belonging to a class</li>
+		<li>Naming - by convention, class names use what's known as CamelCase
+		<ol>
+		<li>Capitalize the first letter</li>
+		<li>Capitalize the first letter of each "word" in the Name</li>
+		<li>For example: MyFancyClass</li>
+		</ol>
+		</li>
+		<li>Class vs Object/Instance
+		<ol>
+		<li>Class is to blueprint as Houses built from the blueprint are to "object/instance"</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Syntax<br /><br />class &lt;ClassName&gt;:<br /><br />&nbsp; def __init__(self):<br />&nbsp;&nbsp;&nbsp; // do stuff<br /><br />&nbsp; def othermethod(self [,other params]):<br />&nbsp;&nbsp;&nbsp; // do more stuff<br /><br /></li>
+		<li>To "instantiate" a class, you simply use it's name as if it were a function, and you probably need to assign it to a variable, e.g.
+		<ol>
+		<li>mfc&nbsp; = MyFancyClass()</li>
+		</ol>
+		</li>
+		<li>__init__ method
+		<ol>
+		<li>called when you instantiate a class</li>
+		</ol>
+		</li>
+		<li>Calling a method
+		<ol>
+		<li>mfc.othermethod(&lt;params if they are required&gt;) (using the example above)<br /><br /></li>
+		<li>"self" variable<br />
+		<ol>
+		<li>every method is passed a copy of the object instance in the variable named "self" - as the first parameter - this is how you manipulate the data contained w/in an instance of a class</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Inheritance
+		<ol>
+		<li>A class can "inherit" the properites and methods of a "parent" class</li>
+		<li>You can then redefine the methods or properties, and/or create new methods/properties for the subclass</li>
+		<li>To create a subclass:<br /><br />class MySubclass(MyFancyClass):<br />&nbsp; // make changes and/or add new stuff</li>
+		<li>Any method or property defined on the parent class will be available to the subclass - you do NOT have to redefine them</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>unittest
+		<ol>
+		<li><a href="https://docs.python.org/3/library/unittest.html">Here's the Python doc</a> for this package</li>
+		<li>This is Pythons built in testing framework</li>
+		<li>we just started introducing it - we needed to get through classes and some OOP basics (above)</li>
+		<li>To start using it
+		<ol>
+		<li>Ideally structure your project to include a directory called "test"</li>
+		<li>Put your test module(s) (python files in that directory) - name them test_&lt;something_something&gt;.py</li>
+		<li>Using unittest
+		<ol>
+		<li>import unittest # inside a test module</li>
+		<li>create a test class - e.g. <br /><br />Test&lt;SomeUsefulName&gt;(unittest.TestCase):<br />
+		<ol>
+		<li>Your test class MUST subclass (inherit from) the TestCase class - defined inside unittest</li>
+		</ol>
+		</li>
+		<li>define test methods - names must start with "test" - usually name them test_&lt;some_meaningful_name&gt; (i.e. use underbars)
+		<ol>
+		<li>in the methods call one of unittests "assert" methods, e.g. assertTrue(&lt;expression&gt;)</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+		<h2>Git/Github</h2>
+		<ol>
+		<li>branching<br />
+		<ol>
+		<li>branches are usually for adding functionality w/o breaking the working code in master</li>
+		<li>When you create a branch, it will "copy" all the files in master exactly as they are at the time you create the branch</li>
+		<li>The general workflow is:
+		<ol>
+		<li>You get an idea for a new feature or "big change"</li>
+		<li>Create a branch</li>
+		<li>Check it out (requires all changes on current branch be commited - or stashed)</li>
+		<li>Make your changes, test them, etc.</li>
+		<li>Merge them when ready (we didn't talk about this step yet)</li>
+		<li>Continue to follow the pull, work, push workflow while you're working on your branch</li>
+		</ol>
+		</li>
+		<li>Commands
+		<ol>
+		<li>git checkout [-b] &lt;branchname&gt;&nbsp; # -b creates the branch when you check it out - you can also create and checkout separately</li>
+		<li>git branch -v (view branches)</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+	</body>
+</html>
