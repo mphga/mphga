@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../styles.css">
+	</head>
+	<body>
+		<h1>2019-08-25 project directory structure and imports - for unittest</h1>
+		<h2>Python</h2>
+		<ol>
+		<li>unittest
+		<ol>
+		<li>project structure - to make unittest work<br />
+		<ol>
+		<li>&lt;projdir&gt;<br />&nbsp;&nbsp;&nbsp; &lt;projdir&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __init__.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;driverscript&gt;.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;libfile&gt;.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;other_py_files&gt;.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;other_non_py_files&gt;.py<br />&nbsp;&nbsp;&nbsp; &lt;other_dirs&gt;<br />&nbsp;&nbsp;&nbsp; &lt;test&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __init__.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test_&lt;somename&gt;.py<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test_&lt;othertestfiles&gt;.py</li>
+		<li>NB: the above structure may or may not be required - but it will enable unitest to work</li>
+		<li>Calling unittest (give the above structure)<br /><br />python -m unittest <br /><br />** issue the command above from inside the TOPLEVEL &lt;projdir&gt;</li>
+		</ol>
+		</li>
+		<li>imports
+		<ol>
+		<li>in your test_&lt;name&gt;.py files you'll need to import your program files - in particular your lib file(s)</li>
+		<li>import will look something like this:<br /><br />import &lt;projname&gt;.&lt;libfilename&gt;as &lt;libfilename&gt;<br /><br />e.g.<br /><br />import hp.lib as lib</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		<li>Standard Library
+		<ol>
+		<li>os
+		<ol>
+		<li>functions and such related to interacting with a computer operating system</li>
+		<li>example we used was:<br /><br />os.path.join()<br /><br />which will join strings into a valid file path for whatever OS your program happens to be running on, which could be MacOS today, and Windows tomorrow</li>
+		</ol>
+		</li>
+		</ol>
+		</li>
+		</ol>
+	</body>
+</html>
